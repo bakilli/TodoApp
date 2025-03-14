@@ -1,0 +1,28 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node  ./dist/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:start": "tsc && concurrently -k \"tsc -w --pretty\" \"node ./dist/server.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "es": "^0.8.0",
+    "express": "^4.21.2",
+    "jquery": "^3.7.1",
+    "json-server": "^1.0.0-beta.3",
+    "tsc": "^2.0.4"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "babel": "^6.23.0",
+    "concurrently": "^9.1.2",
+    "typescript": "^5.8.2"
+  }
+}
