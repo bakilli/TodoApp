@@ -12,6 +12,8 @@
   "description": "",
   "dependencies": {
     "body-parser": "^1.20.3",
+    "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "es": "^0.8.0",
     "express": "^4.21.2",
