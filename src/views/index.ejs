@@ -80,7 +80,7 @@
 
                 $('#task-list .task-item').each(function () {
                     const task = $(this);
-                    const isCompleted = task.attr('data-completed') === true;
+                    const isCompleted = task[0].querySelector("button.toggle-btn").textContent === '✅';
 
                     if (filter === 'all') {
                         task.show();
@@ -95,6 +95,13 @@
                 $('.filter-btn').removeClass('active');
                 $(this).addClass('active');
             });
+
+            // Task completion change button text on first load
+            $('#task-list .task-item').each(function () {
+                const task = $(this);
+                const isCompleted = task.attr('data-completed') === 'true';
+                task.find('.toggle-btn').text(isCompleted ? '✅' : '🔲');
+            });      
             
             // Toggle task completion
             $('.toggle-btn').click(function () {
@@ -103,7 +110,7 @@
 
                 $.get(`/complete/${id}`, function () {
                     button.text(button.text() === '✅' ? '🔲' : '✅');
-                    button.closest('li').find('.task-text').toggleClass('completed');
+                    button.closest('li').find('.task-text').toggleClass('data-completed');
                 });
             });
 
